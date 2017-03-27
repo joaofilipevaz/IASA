@@ -1,3 +1,7 @@
+package pee.modprob;
+
+import pee.modprob.Estado;
+
 /**
  * Created by Mónica on 27/03/2017.
  */

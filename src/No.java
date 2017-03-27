@@ -1,10 +1,13 @@
+import pee.modprob.Estado;
+import pee.modprob.Operador;
+
 /**
  * Created by Mónica on 27/03/2017.
  */
 public class No {
 
     private int profundidade = 0;
-    private double custo;
+    private double custo = 0.0;
 
     public No(Estado estado){
 
@@ -38,5 +41,4 @@ public class No {
 
         return 0;
     }
-
 }

@@ -1,3 +1,5 @@
+package pee.mecproc.mem;
+
 import java.util.Queue;
 
 /**
@@ -11,7 +13,7 @@ public class MemoriaProcura {
 
     public void limpar(){}
 
-    public void inserir(){}
+    public void inserir(No no){}
 
     public No remover(){
         return null;
