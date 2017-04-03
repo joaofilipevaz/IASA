@@ -6,9 +6,6 @@ import pee.modprob.*;
 import pee.mecproc.mem.*;
 import pee.*;
 
-/**
- * Created by Mónica on 27/03/2017.
- */
 public abstract class MecanismoProcura<P extends Problema> {
 
     private MemoriaProcura memoria_procura;
@@ -29,7 +26,7 @@ public abstract class MecanismoProcura<P extends Problema> {
         this.problema = problema;
         this.memoria_procura.limpar();
         No no_inicial = new No(p.getEstadoInicial());
-        this.memoria_procura.inserir(No no_inicial);
+        this.memoria_procura.inserir(no_inicial);
         while (!memoria_procura.fronteiraVazia()){
             No no = memoria_procura.remover();
             if (problema.objectivo(no.getEstado())){
@@ -40,6 +37,7 @@ public abstract class MecanismoProcura<P extends Problema> {
                 }
             }
         }
+        return null;
     }
 
     private void expandir(No no){
