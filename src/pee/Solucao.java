@@ -1,13 +1,10 @@
 package pee;
 
-import java.util.Iterator;
+import java.util.*;
 
-/**
- * Created by Mónica on 27/03/2017.
- */
-public interface Solucao {
+public interface Solucao extends Iterable<PassoSolucao> {
 
-    public Iterator<PassoSolucao> interator();
+    public Iterator<PassoSolucao> iterator();
 
     public int getDimensão();
 

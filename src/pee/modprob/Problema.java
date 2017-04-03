@@ -14,12 +14,10 @@ public abstract class Problema {
     }
 
     public Estado getEstadoInicial(){
-
         return this.estadoinicial;
     }
 
     public Operador[] getOperadores(){
-
         return new Operador[0];
     }
 

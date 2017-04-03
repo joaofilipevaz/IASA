@@ -2,19 +2,22 @@ package pee.mecproc;
 
 import pee.modprob.Estado;
 import pee.modprob.Operador;
-import pee.modprob.Problema;
+import pee.modprob.*;
+import pee.mecproc.mem.*;
+import pee.*;
 
 /**
  * Created by Mónica on 27/03/2017.
  */
-public abstract class MecanismoProcura {
+public abstract class MecanismoProcura<P extends Problema> {
 
     private MemoriaProcura memoria_procura;
-    private Problema problema;
-    //private No no_inicial;
+    private P problema;
+    private Percurso percurso;
+    //private pee.No no_inicial;
 
-    public MecanismoProcura(){
-
+    public MecanismoProcura() {
+        this.memoria_procura = new MemoriaProcura();
     }
 
     public Solucao resolver(Problema problema){
@@ -52,7 +55,13 @@ public abstract class MecanismoProcura {
     }
 
     private Solucao gerarSolucao(No noFinal){
-
-        return null;
+        percurso = new Percurso();
+        No no = noFinal;
+        while (no != null){
+            percurso.juntarInicio(no);
+            No antecessor = no.getAntecessor();
+            no = antecessor;
+        }
+        return percurso;
     }
 }
