@@ -1,13 +1,16 @@
 package pee.larg;
 
 import pee.mecproc.MecanismoProcura;
+import pee.mecproc.mem.MemoriaProcura;
+import pee.modprob.Problema;
 
 /**
- * Created by Mónica on 03/04/2017.
+ *
  */
-public class ProcuraLarg extends MecanismoProcura {
+public class ProcuraLarg extends MecanismoProcura<Problema> {
 
-    public ProcuraLarg(){
-
+    @Override
+    protected MemoriaProcura iniciarMemoria() {
+        return null;
     }
 }

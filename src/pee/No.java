@@ -3,9 +3,7 @@ package pee;
 import pee.modprob.Estado;
 import pee.modprob.Operador;
 
-/**
- * Created by Mónica on 27/03/2017.
- */
+
 public class No implements PassoSolucao {
 
     private Estado estado;
@@ -31,11 +29,7 @@ public class No implements PassoSolucao {
     }
 
     @Override
-    public Operador getOperator() {
-        return this.operador;
-    }
-
-    public Operador getOperador(){
+    public Operador getOperador() {
         return this.operador;
     }
 

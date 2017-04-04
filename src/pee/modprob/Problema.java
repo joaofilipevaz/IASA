@@ -1,23 +1,24 @@
 package pee.modprob;
 
+import java.util.ArrayList;
+
 public abstract class Problema {
 
     private Estado estadoinicial;
-    private Operador[] operadores;
+    private ArrayList<Operador> operadores;
 
-    public Problema(Estado estadoinicial, Operador[] operadores) {
+    public Problema(Estado estadoinicial, ArrayList<Operador> operadores) {
         this.estadoinicial = estadoinicial;
-        this.operadores = operadores;
+        this.operadores = new ArrayList<>();
     }
 
     public Estado getEstadoInicial(){
         return this.estadoinicial;
     }
 
-    public Operador[] getOperadores(){
-        return new Operador[0];
+    public ArrayList<Operador> getOperadores(){
+        return this.operadores;
     }
 
     public abstract boolean objectivo(Estado estado);
-
 }

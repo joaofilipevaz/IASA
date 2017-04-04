@@ -4,23 +4,32 @@ import pee.No;
 import java.util.Queue;
 
 /**
- * Created by Mónica on 27/03/2017.
+ *
  */
 public class MemoriaProcura {
+
+    protected Queue<No> fronteira;
+    protected Queue<No> explorados;
 
     public MemoriaProcura(Queue<No> fronteira){
 
     }
 
-    public void limpar(){}
+    public void limpar(){
+        fronteira.clear();
 
-    public void inserir(No no){}
+    }
+
+    public void inserir(No no){
+        fronteira.add(no);
+
+    }
 
     public No remover(){
-        return null;
+        return fronteira.remove();
     }
 
     public boolean fronteiraVazia(){
-        return false;
+        return fronteira.isEmpty();
     }
 }

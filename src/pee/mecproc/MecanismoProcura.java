@@ -6,15 +6,17 @@ import pee.modprob.*;
 import pee.mecproc.mem.*;
 import pee.*;
 
+import java.util.ArrayList;
+
 public abstract class MecanismoProcura<P extends Problema> {
 
     private MemoriaProcura memoria_procura;
-    private P problema;
+    protected P problema;
     private Percurso percurso;
     //private pee.No no_inicial;
 
     public MecanismoProcura() {
-        this.memoria_procura = new MemoriaProcura();
+        this.memoria_procura = iniciarMemoria();
     }
 
     public Solucao resolver(Problema problema){
@@ -23,7 +25,7 @@ public abstract class MecanismoProcura<P extends Problema> {
     }
 
     public Solucao resolver(Problema p, int profmax){
-        this.problema = problema;
+        //this.problema = p;
         this.memoria_procura.limpar();
         No no_inicial = new No(p.getEstadoInicial());
         this.memoria_procura.inserir(no_inicial);
@@ -42,7 +44,7 @@ public abstract class MecanismoProcura<P extends Problema> {
 
     private void expandir(No no){
         Estado estado = no.getEstado();
-        Operador[] operadores = this.problema.getOperadores();
+        ArrayList<Operador> operadores = problema.getOperadores();
         for (Operador op : operadores) {
             Estado estadoSuc = op.aplicar(estado);
             if (estadoSuc!=null){
@@ -62,4 +64,6 @@ public abstract class MecanismoProcura<P extends Problema> {
         }
         return percurso;
     }
+
+    protected abstract MemoriaProcura iniciarMemoria();
 }

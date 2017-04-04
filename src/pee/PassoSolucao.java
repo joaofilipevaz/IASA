@@ -4,13 +4,13 @@ import pee.modprob.Estado;
 import pee.modprob.Operador;
 
 /**
- * Created by Mónica on 27/03/2017.
+ * Interface que implementa um passo para a solução que corresponde um nó
  */
 public interface PassoSolucao {
 
-    public Estado getEstado();
+    Estado getEstado();
 
-    public Operador getOperator();
+    Operador getOperador();
 
-    public double getCusto();
+    double getCusto();
 }
