@@ -1,7 +1,20 @@
 package plantraj.modprob;
 
-/**
- * Created by Mónica on 03/04/2017.
- */
-public class EstadoLocalidade {
+import pee.modprob.Estado;
+
+public class EstadoLocalidade extends Estado {
+
+    public EstadoLocalidade(String localidade){
+
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    public String toString(){
+
+        return null;
+    }
 }

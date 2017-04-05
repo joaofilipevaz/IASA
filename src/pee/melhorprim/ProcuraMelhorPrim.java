@@ -14,10 +14,12 @@ public abstract class ProcuraMelhorPrim<P extends Problema> extends MecanismoPro
 
     protected MemoriaProcura iniciarMemoria(){
 
+        return null;
     }
 
     public int compare(No o1, No o2){
 
+        return 0;
     }
 
     protected abstract double f(No no);
