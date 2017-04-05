@@ -19,7 +19,21 @@ public class ProcuraProfIter extends ProcuraProf {
     }
 
     private Solucao resolver(Problema problema, int profMax, int incProf){
+        Solucao s = null;
+        boolean cutoff = false;
+        for (int i=0; i<profMax; i++){
+            if (problema.getEstadoInicial().equals()){
 
+            }
+
+            while (i<incProf){
+                problema.getOperadores().get(i);
+
+            }
+        }
+        if (s.equals(cutoff)){
+            return s;
+        }
     }
 
     public Solucao resolver(Problema problema, int profMax){

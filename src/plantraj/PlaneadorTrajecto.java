@@ -29,7 +29,7 @@ public class PlaneadorTrajecto implements Solucao {
     }
 
     @Override
-    public int getDimensão() {
+    public int getDimensao() {
         return 0;
     }
 

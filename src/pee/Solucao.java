@@ -6,7 +6,7 @@ public interface Solucao extends Iterable<PassoSolucao> {
 
     Iterator<PassoSolucao> iterator();
 
-    int getDimensão();
+    int getDimensao();
 
     double getCusto();
 }

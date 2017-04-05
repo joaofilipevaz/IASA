@@ -12,7 +12,7 @@ public class Percurso implements Solucao {
         return percurso.iterator();
     }
 
-    public int getDimensão(){
+    public int getDimensao(){
         return percurso.size();
     }
 
