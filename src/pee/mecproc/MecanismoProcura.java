@@ -19,13 +19,13 @@ public abstract class MecanismoProcura<P extends Problema> {
         this.memoria_procura = iniciarMemoria();
     }
 
-    public Solucao resolver(Problema problema){
+    public Solucao resolver(P problema){
         int profmax = Integer.MAX_VALUE;
         return resolver(problema, profmax);
     }
 
-    public Solucao resolver(Problema p, int profmax){
-        //this.problema = p;
+    public Solucao resolver(P p, int profmax){
+        this.problema = p;
         this.memoria_procura.limpar();
         No no_inicial = new No(p.getEstadoInicial());
         this.memoria_procura.inserir(no_inicial);

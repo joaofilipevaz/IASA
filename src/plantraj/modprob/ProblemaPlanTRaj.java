@@ -6,13 +6,14 @@ import java.util.ArrayList;
 
 public class ProblemaPlanTRaj extends Problema {
 
-    private Estado estadoFinal;
+    private EstadoLocalidade estadoFinal;
 
     public ProblemaPlanTRaj(String locIni, String locFin, ArrayList<OperadorLigacao> operadores){
-        super();
+        super(new EstadoLocalidade(locIni), operadores);
+        estadoFinal = new EstadoLocalidade(locFin);
     }
 
     public boolean objectivo(Estado estado){
-        return false;
+        return estadoFinal.equals(estado);
     }
 }

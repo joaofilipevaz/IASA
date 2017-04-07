@@ -12,6 +12,7 @@ public class PlaneadorTrajecto implements Solucao {
 
     public void main(String[] args){
 
+
     }
 
     private ArrayList<OperadorLigacao> definirOperadores(){
@@ -20,6 +21,7 @@ public class PlaneadorTrajecto implements Solucao {
     }
 
     private void mostrarTrajecto(Solucao solucao){
+
 
     }
 

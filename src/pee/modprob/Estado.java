@@ -6,11 +6,7 @@ package pee.modprob;
 public abstract class Estado {
 
     public boolean equals(Object obj){
-        if (obj.equals(this)){
-            return true;
-        } else {
-            return false;
-        }
+        return ( (obj instanceof Estado) && (obj.hashCode() == hashCode()) );
     }
 
     public abstract int hashCode();
