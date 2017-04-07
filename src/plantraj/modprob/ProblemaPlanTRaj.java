@@ -2,13 +2,12 @@ package plantraj.modprob;
 
 import pee.modprob.Estado;
 import pee.modprob.Problema;
-import java.util.ArrayList;
 
 public class ProblemaPlanTRaj extends Problema {
 
     private EstadoLocalidade estadoFinal;
 
-    public ProblemaPlanTRaj(String locIni, String locFin, ArrayList<OperadorLigacao> operadores){
+    public ProblemaPlanTRaj(String locIni, String locFin, OperadorLigacao[] operadores){
         super(new EstadoLocalidade(locIni), operadores);
         estadoFinal = new EstadoLocalidade(locFin);
     }

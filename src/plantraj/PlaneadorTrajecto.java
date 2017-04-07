@@ -13,7 +13,7 @@ public class PlaneadorTrajecto {
 
     public void main(String[] args){
         OperadorLigacao[] operadores = definirOperadores();
-        ProblemaPlanTRaj problema = new ProblemaPlanTRaj("0", "4", );
+        ProblemaPlanTRaj problema = new ProblemaPlanTRaj("0", "4", operadores);
 
         Procura mecProcura = new ProcuraProf();
         System.out.println("ProcuraProf:");
