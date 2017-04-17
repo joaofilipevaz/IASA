@@ -21,7 +21,7 @@ public class ProcuraProfIter extends ProcuraProf {
     private Solucao resolver(Problema problema, int profMax, int incProf){
         Solucao s = null;
         boolean cutoff = false;
-        for (int i=0; i<profMax; i++){
+        for (int i= incProf; incProf<profMax; i+= incProf){
             if (problema.getEstadoInicial().equals()){
 
             }

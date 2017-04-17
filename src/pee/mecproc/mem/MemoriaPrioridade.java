@@ -3,19 +3,14 @@ package pee.mecproc.mem;
 import pee.No;
 
 import java.util.Comparator;
-import java.util.Queue;
+import java.util.PriorityQueue;
 
 /**
  *
  */
-public class MemoriaPrioridade extends MemoriaProcura implements Comparator<No> {
+public class MemoriaPrioridade extends MemoriaProcura {
 
     public MemoriaPrioridade(Comparator<No> comparador) {
-        super(comparador);
-    }
-
-    @Override
-    public int compare(No o1, No o2) {
-        return 0;
+        super(new PriorityQueue<>(comparador));
     }
 }
