@@ -4,21 +4,11 @@ import pee.No;
 import pee.Solucao;
 import pee.modprob.ProblemaHeur;
 
-public class ProcuraAA extends ProcuraMelhorPrim<ProblemaHeur> implements ProcuraHeur {
+public class ProcuraAA extends ProcuraMelhorPrim<ProblemaHeur>{
 
 
     @Override
     protected double f(No no) {
         return 0;
-    }
-
-    @Override
-    public Solucao resolver(ProblemaHeur problema) {
-        return null;
-    }
-
-    @Override
-    public Solucao resolver(ProblemaHeur problema, int profMax) {
-        return null;
     }
 }
