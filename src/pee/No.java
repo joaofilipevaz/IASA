@@ -25,23 +25,23 @@ public class No implements PassoSolucao {
     }
 
     public Estado getEstado(){
-        return this.estado;
+        return estado;
     }
 
     @Override
     public Operador getOperador() {
-        return this.operador;
+        return operador;
     }
 
     public No getAntecessor(){
-        return this.antecessor;
+        return antecessor;
     }
 
     public int getProfundidade(){
-        return this.profundidade;
+        return profundidade;
     }
 
     public double getCusto(){
-        return this.custo;
+        return custo;
     }
 }

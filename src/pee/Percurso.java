@@ -13,6 +13,8 @@ public class Percurso implements Solucao {
     }
 
     public int getDimensao(){
+        if(percurso.isEmpty())
+            return 0;
         return percurso.size();
     }
 

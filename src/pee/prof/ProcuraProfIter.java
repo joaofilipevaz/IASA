@@ -11,7 +11,7 @@ public class ProcuraProfIter extends ProcuraProf {
     private int incProf = 1;
 
     public int getIncProf(){
-        return this.incProf;
+        return incProf;
     }
 
     public void setIncProf(int incProf){
@@ -19,24 +19,16 @@ public class ProcuraProfIter extends ProcuraProf {
     }
 
     private Solucao resolver(Problema problema, int profMax, int incProf){
-        Solucao s = null;
-        boolean cutoff = false;
-        for (int i= incProf; incProf<profMax; i+= incProf){
-            if (problema.getEstadoInicial().equals()){
-
-            }
-
-            while (i<incProf){
-                problema.getOperadores().get(i);
-
+        for(int i = incProf; incProf <= profMax; i += incProf){
+            Solucao solucao = super.resolver(problema, i);
+            if(solucao != null){
+                return solucao;
             }
         }
-        if (s.equals(cutoff)){
-            return s;
-        }
+        return null;
     }
 
     public Solucao resolver(Problema problema, int profMax){
-        return resolver(problema, profMax, this.getIncProf());
+        return resolver(problema, profMax, incProf);
     }
 }

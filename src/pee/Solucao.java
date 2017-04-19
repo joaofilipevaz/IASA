@@ -1,6 +1,6 @@
 package pee;
 
-import java.util.*;
+import java.util.Iterator;
 
 public interface Solucao extends Iterable<PassoSolucao> {
 
