@@ -16,13 +16,13 @@ public class PlaneadorTrajecto {
         ProblemaPlanTRaj problema = new ProblemaPlanTRaj("0", "4", operadores);
 
         Procura mecProcura = new ProcuraProf();
-        System.out.println("ProcuraProf:");
+        System.out.println("Procura em Profundidade:");
         Solucao solucao = mecProcura.resolver(problema);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
 
         mecProcura = new ProcuraProfIter();
-        System.out.println("ProcuraProfIter:");
+        System.out.println("Procura em Profundidade Iterativa:");
         solucao = mecProcura.resolver(problema);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
@@ -35,26 +35,26 @@ public class PlaneadorTrajecto {
     }
 
     private OperadorLigacao[] definirOperadores(){
-        OperadorLigacao[] operadores = new OperadorLigacao[11];
-        operadores[0] = new OperadorLigacao("0", "1", 5);
-        operadores[1] = new OperadorLigacao("0", "2", 25);
-        operadores[2] = new OperadorLigacao("1", "3", 12);
-        operadores[3] = new OperadorLigacao("1", "6", 5);
-        operadores[4] = new OperadorLigacao("2", "4", 30);
-        operadores[5] = new OperadorLigacao("3", "2", 10);
-        operadores[6] = new OperadorLigacao("3", "5", 5);
-        operadores[7] = new OperadorLigacao("4", "3", 2);
-        operadores[8] = new OperadorLigacao("5", "6", 8);
-        operadores[9] = new OperadorLigacao("5", "4", 10);
-        operadores[10] = new OperadorLigacao("6", "3", 15);
-        return operadores;
+
+        return new OperadorLigacao[]{
+                new OperadorLigacao("Loc-0","Loc-2",25),
+                new OperadorLigacao("Loc-0","Loc-1",5),
+                new OperadorLigacao("Loc-1","Loc-3",12),
+                new OperadorLigacao("Loc-1","Loc-6",5),
+                new OperadorLigacao("Loc-2","Loc-4",30),
+                new OperadorLigacao("Loc-3","Loc-2",10),
+                new OperadorLigacao("Loc-3","Loc-5",5),
+                new OperadorLigacao("Loc-4","Loc-3",2),
+                new OperadorLigacao("Loc-5","Loc-6",8),
+                new OperadorLigacao("Loc-5","Loc-4",10),
+                new OperadorLigacao("Loc-6","Loc-3",15)
+        };
     }
 
     private void mostrarTrajecto(Solucao solucao){
         if (solucao == null){
             for (PassoSolucao ps : solucao) {
-                System.out.println(ps.getEstado());
-                System.out.println(ps.getCusto());
+                System.out.printf("estado: %s - custo: %s \n",ps.getEstado(), ps.getCusto());
             }
         }
     }

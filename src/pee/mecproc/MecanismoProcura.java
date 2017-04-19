@@ -10,31 +10,28 @@ import java.util.ArrayList;
 
 public abstract class MecanismoProcura<P extends Problema> {
 
-    private MemoriaProcura memoria_procura;
+    private MemoriaProcura memoriaProcura;
     protected P problema;
-    private Percurso percurso;
-    //private pee.No no_inicial;
 
     public MecanismoProcura() {
-        this.memoria_procura = iniciarMemoria();
+        memoriaProcura = iniciarMemoria();
     }
 
     public Solucao resolver(P problema){
-        int profmax = Integer.MAX_VALUE;
-        return resolver(problema, profmax);
+        return resolver(problema, Integer.MAX_VALUE);
     }
 
-    public Solucao resolver(P p, int profmax){
+    public Solucao resolver(P p, int profMax){
         this.problema = p;
-        this.memoria_procura.limpar();
+        memoriaProcura.limpar();
         No no_inicial = new No(p.getEstadoInicial());
-        this.memoria_procura.inserir(no_inicial);
-        while (!memoria_procura.fronteiraVazia()){
-            No no = memoria_procura.remover();
+        memoriaProcura.inserir(no_inicial);
+        while (!memoriaProcura.fronteiraVazia()){
+            No no = memoriaProcura.remover();
             if (problema.objectivo(no.getEstado())){
                 return gerarSolucao(no);
             } else {
-                if (no.getProfundidade() < profmax){
+                if (no.getProfundidade() < profMax){
                     expandir(no);
                 }
             }
@@ -44,23 +41,22 @@ public abstract class MecanismoProcura<P extends Problema> {
 
     private void expandir(No no){
         Estado estado = no.getEstado();
-        ArrayList<Operador> operadores = problema.getOperadores();
+        Operador[] operadores = problema.getOperadores();
         for (Operador op : operadores) {
             Estado estadoSuc = op.aplicar(estado);
             if (estadoSuc!=null){
                 No noSuc = new No(estadoSuc, op, no);
-                memoria_procura.inserir(noSuc);
+                memoriaProcura.inserir(noSuc);
             }
         }
     }
 
     private Solucao gerarSolucao(No noFinal){
-        percurso = new Percurso();
+        Percurso percurso = new Percurso();
         No no = noFinal;
         while (no != null){
             percurso.juntarInicio(no);
-            No antecessor = no.getAntecessor();
-            no = antecessor;
+            no = no.getAntecessor();
         }
         return percurso;
     }

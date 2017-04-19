@@ -33,7 +33,7 @@ public class MemoriaProcura {
     }
 
     public No remover(){
-        return fronteira.remove();
+        return fronteira.poll();
     }
 
     public boolean fronteiraVazia(){

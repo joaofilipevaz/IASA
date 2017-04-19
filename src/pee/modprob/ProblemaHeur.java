@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public abstract class ProblemaHeur extends Problema {
 
-    public ProblemaHeur(Estado estadoInicial, ArrayList<Operador> operadores){
+    public ProblemaHeur(Estado estadoInicial, Operador[] operadores){
         super(estadoInicial, operadores);
     }
 
