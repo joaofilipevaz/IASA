@@ -5,14 +5,13 @@ import pee.modprob.Operador;
 
 public class OperadorLigacao implements Operador {
 
-    private EstadoLocalidade estadoOrigem;
-    private EstadoLocalidade estadoDestino;
+    private EstadoLocalidade estadoDestino, estadoOrigem;
     private int custoLigacao;
 
     public OperadorLigacao(String locIni, String locFin, int custo){
-        this.estadoOrigem = new EstadoLocalidade(locIni);
-        this.estadoDestino = new EstadoLocalidade(locFin);
-        this.custoLigacao = custo;
+        estadoOrigem = new EstadoLocalidade(locIni);
+        estadoDestino = new EstadoLocalidade(locFin);
+        custoLigacao = custo;
     }
 
     @Override

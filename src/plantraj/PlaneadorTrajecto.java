@@ -7,23 +7,23 @@ import pee.larg.ProcuraLarg;
 import pee.prof.ProcuraProf;
 import pee.prof.ProcuraProfIter;
 import plantraj.modprob.OperadorLigacao;
-import plantraj.modprob.ProblemaPlanTRaj;
+import plantraj.modprob.ProblemaPlanTraj;
 
 public class PlaneadorTrajecto {
 
-    public void main(String[] args){
+    public static void main(String[] args){
         OperadorLigacao[] operadores = definirOperadores();
-        ProblemaPlanTRaj problema = new ProblemaPlanTRaj("0", "4", operadores);
+        ProblemaPlanTraj problema = new ProblemaPlanTraj("0", "4", operadores);
 
-        Procura mecProcura = new ProcuraProf();
-        System.out.println("Procura em Profundidade:");
-        Solucao solucao = mecProcura.resolver(problema);
-        mostrarTrajecto(solucao);
-        System.out.println("=========================");
+//        Procura mecProcura = new ProcuraProf();
+//        System.out.println("Procura em Profundidade:");
+//        Solucao solucao = mecProcura.resolver(problema);
+//        mostrarTrajecto(solucao);
+//        System.out.println("=========================");
 
-        mecProcura = new ProcuraProfIter();
+        Procura mecProcura = new ProcuraProfIter();
         System.out.println("Procura em Profundidade Iterativa:");
-        solucao = mecProcura.resolver(problema);
+        Solucao solucao = mecProcura.resolver(problema, 5);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
 
@@ -34,11 +34,11 @@ public class PlaneadorTrajecto {
         System.out.println("=========================");
     }
 
-    private OperadorLigacao[] definirOperadores(){
+    private static OperadorLigacao[] definirOperadores(){
 
         return new OperadorLigacao[]{
-                new OperadorLigacao("Loc-0","Loc-2",25),
-                new OperadorLigacao("Loc-0","Loc-1",5),
+                new OperadorLigacao("Loc-0","Loc-1",25),
+                new OperadorLigacao("Loc-0","Loc-2",5),
                 new OperadorLigacao("Loc-1","Loc-3",12),
                 new OperadorLigacao("Loc-1","Loc-6",5),
                 new OperadorLigacao("Loc-2","Loc-4",30),
@@ -51,8 +51,8 @@ public class PlaneadorTrajecto {
         };
     }
 
-    private void mostrarTrajecto(Solucao solucao){
-        if (solucao == null){
+    private static void mostrarTrajecto(Solucao solucao){
+        if (solucao != null){
             for (PassoSolucao ps : solucao) {
                 System.out.printf("estado: %s - custo: %s \n",ps.getEstado(), ps.getCusto());
             }
