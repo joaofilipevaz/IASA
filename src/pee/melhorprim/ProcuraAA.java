@@ -8,6 +8,6 @@ public class ProcuraAA extends ProcuraMelhorPrim<ProblemaHeur>{
 
     @Override
     protected double f(No no) {
-        return 0;
+        return no.getCusto() + problema.heuristica(no.getEstado());
     }
 }
