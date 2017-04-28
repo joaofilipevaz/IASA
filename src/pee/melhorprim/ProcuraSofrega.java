@@ -9,6 +9,6 @@ public class ProcuraSofrega extends ProcuraMelhorPrim<ProblemaHeur> {
 
     @Override
     protected double f(No no) {
-        return 0;
+        return problema.heuristica(no.getEstado());
     }
 }
