@@ -13,7 +13,7 @@ public class PlaneadorTrajecto {
 
     public static void main(String[] args){
         OperadorLigacao[] operadores = definirOperadores();
-        ProblemaPlanTraj problema = new ProblemaPlanTraj("0", "4", operadores);
+        ProblemaPlanTraj problema = new ProblemaPlanTraj("0", "6", operadores);
 
 //        Procura mecProcura = new ProcuraProf();
 //        System.out.println("Procura em Profundidade:");

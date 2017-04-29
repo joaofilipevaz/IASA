@@ -16,6 +16,7 @@ public class MemoriaProcura {
 
     public MemoriaProcura(Queue<No> fronteira){
         this.fronteira = fronteira;
+        this.explorados = new HashMap<>();
     }
 
     public void limpar(){
@@ -27,7 +28,7 @@ public class MemoriaProcura {
         fronteira.add(no);
         Estado estado = no.getEstado();
         No noMemoria = explorados.get(estado);
-        if ((noMemoria == null) ? true : (noMemoria.getCusto() > no.getCusto())) {
+        if ((noMemoria == null) || (noMemoria.getCusto() > no.getCusto())) {
             explorados.put(no.getEstado(), no);
         }
     }
