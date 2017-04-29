@@ -30,6 +30,7 @@ public class MemoriaProcura {
         No noMemoria = explorados.get(estado);
         if ((noMemoria == null) || (noMemoria.getCusto() > no.getCusto())) {
             explorados.put(no.getEstado(), no);
+            System.out.println("insere");
         }
     }
 

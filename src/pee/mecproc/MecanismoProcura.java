@@ -6,8 +6,6 @@ import pee.modprob.*;
 import pee.mecproc.mem.*;
 import pee.*;
 
-import java.util.ArrayList;
-
 public abstract class MecanismoProcura<P extends Problema> {
 
     private MemoriaProcura memoriaProcura;

@@ -15,17 +15,17 @@ public class PlaneadorTrajecto {
         OperadorLigacao[] operadores = definirOperadores();
         ProblemaPlanTraj problema = new ProblemaPlanTraj("0", "6", operadores);
 
-//        Procura mecProcura = new ProcuraProf();
-//        System.out.println("Procura em Profundidade:");
-//        Solucao solucao = mecProcura.resolver(problema);
-//        mostrarTrajecto(solucao);
-//        System.out.println("=========================");
-
-        Procura mecProcura = new ProcuraProfIter();
-        System.out.println("Procura em Profundidade Iterativa:");
-        Solucao solucao = mecProcura.resolver(problema, 5);
+        Procura mecProcura = new ProcuraProf();
+        System.out.println("Procura em Profundidade:");
+        Solucao solucao = mecProcura.resolver(problema);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
+//
+//        Procura mecProcura = new ProcuraProfIter();
+//        System.out.println("Procura em Profundidade Iterativa:");
+//        Solucao solucao = mecProcura.resolver(problema, 5);
+//        mostrarTrajecto(solucao);
+//        System.out.println("=========================");
 
         mecProcura = new ProcuraLarg();
         System.out.println("ProcuraLarg:");
