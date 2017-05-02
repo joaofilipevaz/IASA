@@ -21,8 +21,13 @@ public class No implements PassoSolucao {
         this(estado);
         this.operador = operador;
         this.antecessor = antecessor;
-        this.profundidade = antecessor.getProfundidade() +1;
-        this.custo = antecessor.getCusto() + operador.custo(antecessor.getEstado(), this.estado);
+        if (antecessor != null){
+            this.profundidade = antecessor.getProfundidade() +1;
+            this.custo = antecessor.getCusto() + operador.custo(antecessor.getEstado(), estado);
+        } else if (antecessor == null) {
+            profundidade = 0;
+            custo = 0;
+        }
     }
 
     public Estado getEstado(){

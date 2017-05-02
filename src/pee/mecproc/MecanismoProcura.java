@@ -20,13 +20,12 @@ public abstract class MecanismoProcura<P extends Problema> {
     }
 
     public Solucao resolver(P p, int profMax){
-        this.problema = p;
+        problema = p;
         memoriaProcura.limpar();
-        No no_inicial = new No(p.getEstadoInicial());
+        No no_inicial = new No(problema.getEstadoInicial());
         memoriaProcura.inserir(no_inicial);
         while (!memoriaProcura.fronteiraVazia()){
             No no = memoriaProcura.remover();
-            System.out.println(no.getEstado().toString());
             if (problema.objectivo(no.getEstado())){
                 System.out.println(no.getEstado().toString());
                 return gerarSolucao(no);
@@ -44,7 +43,7 @@ public abstract class MecanismoProcura<P extends Problema> {
         Operador[] operadores = problema.getOperadores();
         for (Operador op : operadores) {
             Estado estadoSuc = op.aplicar(estado);
-            if (estadoSuc!=null){
+            if (estadoSuc != null){
                 No noSuc = new No(estadoSuc, op, no);
                 memoriaProcura.inserir(noSuc);
             }
@@ -53,13 +52,17 @@ public abstract class MecanismoProcura<P extends Problema> {
 
     private Solucao gerarSolucao(No noFinal){
         Percurso percurso = new Percurso();
-        No no = noFinal;
-        while (no != null){
-            percurso.juntarInicio(no);
-            no = no.getAntecessor();
+        while (noFinal != null) {
+            percurso.juntarInicio(noFinal);
+            noFinal = noFinal.getAntecessor();
         }
         return percurso;
     }
 
     protected abstract MemoriaProcura iniciarMemoria();
+
+    //getn nos expandidos(){return memoriaprocura.getnnosexpl();}
+
+    //getn nos fronteira(){return memoriaprocura.getnnosfronteira();}
+
 }

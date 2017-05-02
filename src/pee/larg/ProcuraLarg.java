@@ -9,7 +9,7 @@ import pee.modprob.Problema;
 /**
  *
  */
-public class ProcuraLarg extends MecanismoProcura<Problema> implements Procura {
+public class ProcuraLarg extends MecanismoProcura<Problema> {
 
     @Override
     protected MemoriaProcura iniciarMemoria() {
