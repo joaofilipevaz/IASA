@@ -1,6 +1,6 @@
 package pee.melhorprim;
 
-import pee.No;
+import pee.mecproc.mem.No;
 import pee.Procura;
 import pee.modprob.Problema;
 

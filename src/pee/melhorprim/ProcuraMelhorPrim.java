@@ -1,6 +1,6 @@
 package pee.melhorprim;
 
-import pee.No;
+import pee.mecproc.mem.No;
 import pee.mecproc.MecanismoProcura;
 import pee.mecproc.mem.MemoriaPrioridade;
 import pee.mecproc.mem.MemoriaProcura;

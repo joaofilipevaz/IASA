@@ -1,5 +1,6 @@
-package pee;
+package pee.mecproc.mem;
 
+import pee.PassoSolucao;
 import pee.modprob.Estado;
 import pee.modprob.Operador;
 

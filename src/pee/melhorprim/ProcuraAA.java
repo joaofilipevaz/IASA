@@ -1,7 +1,6 @@
 package pee.melhorprim;
 
-import pee.No;
-import pee.Solucao;
+import pee.mecproc.mem.No;
 import pee.modprob.ProblemaHeur;
 
 public class ProcuraAA extends ProcuraMelhorPrim<ProblemaHeur>{

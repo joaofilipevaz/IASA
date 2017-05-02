@@ -22,6 +22,7 @@ public class ProcuraProfIter extends ProcuraProf {
         for(int i = incProf; incProf <= profMax; i += incProf){
             Solucao solucao = super.resolver(problema, i);
             if(solucao != null){
+                System.out.println("soluçao");
                 return solucao;
             }
         }

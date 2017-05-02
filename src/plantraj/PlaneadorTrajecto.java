@@ -20,7 +20,7 @@ public class PlaneadorTrajecto {
         Solucao solucao = mecProcura.resolver(problema);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
-//
+
 //        Procura mecProcura = new ProcuraProfIter();
 //        System.out.println("Procura em Profundidade Iterativa:");
 //        Solucao solucao = mecProcura.resolver(problema, 5);
@@ -53,6 +53,7 @@ public class PlaneadorTrajecto {
 
     private static void mostrarTrajecto(Solucao solucao){
         if (solucao != null){
+            System.out.println("soluçao");
             for (PassoSolucao ps : solucao) {
                 System.out.printf("estado: %s - custo: %s \n",ps.getEstado(), ps.getCusto());
             }

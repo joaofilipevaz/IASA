@@ -9,6 +9,6 @@ import java.util.LinkedList;
 public class MemoriaLIFO extends MemoriaProcura {
 
     public MemoriaLIFO(){
-        super(Collections.asLifoQueue(new LinkedList<>()));
+        super(Collections.asLifoQueue(new LinkedList<No>()));
     }
 }
