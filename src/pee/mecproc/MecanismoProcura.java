@@ -27,7 +27,6 @@ public abstract class MecanismoProcura<P extends Problema> {
         while (!memoriaProcura.fronteiraVazia()){
             No no = memoriaProcura.remover();
             if (problema.objectivo(no.getEstado())){
-                System.out.println(no.getEstado().toString());
                 return gerarSolucao(no);
             } else {
                 if (no.getProfundidade() < profMax){

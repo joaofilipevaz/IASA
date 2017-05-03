@@ -21,11 +21,11 @@ public class PlaneadorTrajecto {
         mostrarTrajecto(solucao);
         System.out.println("=========================");
 
-//        Procura mecProcura = new ProcuraProfIter();
-//        System.out.println("Procura em Profundidade Iterativa:");
-//        Solucao solucao = mecProcura.resolver(problema, 5);
-//        mostrarTrajecto(solucao);
-//        System.out.println("=========================");
+        mecProcura = new ProcuraProfIter();
+        System.out.println("Procura em Profundidade Iterativa:");
+        solucao = mecProcura.resolver(problema, 5);
+        mostrarTrajecto(solucao);
+        System.out.println("=========================");
 
         mecProcura = new ProcuraLarg();
         System.out.println("ProcuraLarg:");
@@ -37,17 +37,17 @@ public class PlaneadorTrajecto {
     private static OperadorLigacao[] definirOperadores(){
 
         return new OperadorLigacao[]{
-                new OperadorLigacao("Loc-0","Loc-1",25),
-                new OperadorLigacao("Loc-0","Loc-2",5),
-                new OperadorLigacao("Loc-1","Loc-3",12),
-                new OperadorLigacao("Loc-1","Loc-6",5),
-                new OperadorLigacao("Loc-2","Loc-4",30),
-                new OperadorLigacao("Loc-3","Loc-2",10),
-                new OperadorLigacao("Loc-3","Loc-5",5),
-                new OperadorLigacao("Loc-4","Loc-3",2),
-                new OperadorLigacao("Loc-5","Loc-6",8),
-                new OperadorLigacao("Loc-5","Loc-4",10),
-                new OperadorLigacao("Loc-6","Loc-3",15)
+                new OperadorLigacao("0","1",25),
+                new OperadorLigacao("0","2",5),
+                new OperadorLigacao("1","3",12),
+                new OperadorLigacao("1","6",5),
+                new OperadorLigacao("2","4",30),
+                new OperadorLigacao("3","2",10),
+                new OperadorLigacao("3","5",5),
+                new OperadorLigacao("4","3",2),
+                new OperadorLigacao("5","6",8),
+                new OperadorLigacao("5","4",10),
+                new OperadorLigacao("6","3",15)
         };
     }
 

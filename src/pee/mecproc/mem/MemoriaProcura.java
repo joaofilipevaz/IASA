@@ -22,8 +22,8 @@ public class MemoriaProcura {
     public void limpar(){
         fronteira.clear();
         explorados.clear();
-        //set nmaxnosfronteira = 0
-        //set nmaxnosexplorados = 0
+        setNmaxnosfronteira(0);
+        setNmaxnosexplorados(0);
     }
 
     public void inserir(No no){

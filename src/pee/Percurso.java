@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public class Percurso implements Solucao {
 
-    private LinkedList<PassoSolucao> percurso = new LinkedList<>();
+    private LinkedList<PassoSolucao> percurso = new LinkedList<PassoSolucao>();
 
     @Override
     public Iterator<PassoSolucao> iterator() {
