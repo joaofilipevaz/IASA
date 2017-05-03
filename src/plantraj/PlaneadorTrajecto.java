@@ -4,6 +4,10 @@ import pee.PassoSolucao;
 import pee.Procura;
 import pee.Solucao;
 import pee.larg.ProcuraLarg;
+import pee.melhorprim.ProcuraAA;
+import pee.melhorprim.ProcuraCustoUnif;
+import pee.melhorprim.ProcuraHeur;
+import pee.melhorprim.ProcuraSofrega;
 import pee.prof.ProcuraProf;
 import pee.prof.ProcuraProfIter;
 import plantraj.modprob.OperadorLigacao;
@@ -13,7 +17,7 @@ public class PlaneadorTrajecto {
 
     public static void main(String[] args){
         OperadorLigacao[] operadores = definirOperadores();
-        ProblemaPlanTraj problema = new ProblemaPlanTraj("0", "6", operadores);
+        ProblemaPlanTraj problema = new ProblemaPlanTraj("0", "4", operadores);
 
         Procura mecProcura = new ProcuraProf();
         System.out.println("Procura em Profundidade:");
@@ -32,13 +36,31 @@ public class PlaneadorTrajecto {
         solucao = mecProcura.resolver(problema);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
+
+        mecProcura = new ProcuraCustoUnif();
+        System.out.println("ProcuraCustoUnif:");
+        solucao = mecProcura.resolver(problema);
+        mostrarTrajecto(solucao);
+        System.out.println("=========================");
+
+//        ProcuraHeur mecProcuraHeur = new ProcuraSofrega();
+//        System.out.println("ProcuraSofrega:");
+//        solucao = mecProcuraHeur.resolver(problema);
+//        mostrarTrajecto(solucao);
+//        System.out.println("=========================");
+//
+//        mecProcuraHeur = new ProcuraAA();
+//        System.out.println("ProcuraAA:");
+//        solucao = mecProcuraHeur.resolver(problema);
+//        mostrarTrajecto(solucao);
+//        System.out.println("=========================");
     }
 
     private static OperadorLigacao[] definirOperadores(){
 
         return new OperadorLigacao[]{
-                new OperadorLigacao("0","1",25),
-                new OperadorLigacao("0","2",5),
+                new OperadorLigacao("0","1",5),
+                new OperadorLigacao("0","2",25),
                 new OperadorLigacao("1","3",12),
                 new OperadorLigacao("1","6",5),
                 new OperadorLigacao("2","4",30),

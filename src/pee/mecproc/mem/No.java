@@ -24,7 +24,7 @@ public class No implements PassoSolucao {
         if (antecessor != null){
             this.profundidade = antecessor.getProfundidade() +1;
             this.custo = antecessor.getCusto() + operador.custo(antecessor.getEstado(), estado);
-        } else if (antecessor == null) {
+        } else {
             profundidade = 0;
             custo = 0;
         }
