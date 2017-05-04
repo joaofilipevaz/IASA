@@ -48,15 +48,15 @@ public class ResolvePuzzle {
 //        mostrarPuzzle(solAA1, procAA.getNnosFronteira(), procAA.getNnosExpandidos() );
 //        mostrarPuzzle(solAA2, procAA.getNnosFronteira(), procAA.getNnosExpandidos() );
 //        System.out.println("=========================");
-
-        //Procura em Profundidade
-        ProcuraProf mecProcuraProf = new ProcuraProf();
-        System.out.println("Procura em Profundidade:");
-        Solucao solProf1 = mecProcuraProf.resolver(prob1);
-        Solucao solProf2 = mecProcuraProf.resolver(prob2);
-        mostrarPuzzle(solProf1, mecProcuraProf.getNnosFronteira(), mecProcuraProf.getNnosExpandidos() );
-        mostrarPuzzle(solProf2, mecProcuraProf.getNnosFronteira(), mecProcuraProf.getNnosExpandidos() );
-        System.out.println("=========================");
+//
+//        //Procura em Profundidade
+//        ProcuraProf mecProcuraProf = new ProcuraProf();
+//        System.out.println("Procura em Profundidade:");
+//        Solucao solProf1 = mecProcuraProf.resolver(prob1);
+//        Solucao solProf2 = mecProcuraProf.resolver(prob2);
+//        mostrarPuzzle(solProf1, mecProcuraProf.getNnosFronteira(), mecProcuraProf.getNnosExpandidos() );
+//        mostrarPuzzle(solProf2, mecProcuraProf.getNnosFronteira(), mecProcuraProf.getNnosExpandidos() );
+//        System.out.println("=========================");
 //
 //        //Procura em Profundidade Iterativa
 //        ProcuraProfIter mecProcuraProfIter = new ProcuraProfIter();
@@ -66,18 +66,23 @@ public class ResolvePuzzle {
 //        mostrarPuzzle(solProfIter1, mecProcuraProfIter.getNnosFronteira(), mecProcuraProfIter.getNnosExpandidos() );
 //        mostrarPuzzle(solProfIter2, mecProcuraProfIter.getNnosFronteira(), mecProcuraProfIter.getNnosExpandidos() );
 //        System.out.println("=========================");
-//
+
 //        //Procura em Largura
-//        mecProcura = new ProcuraLarg();
-//        System.out.println("ProcuraLarg:");
-//        solucao = mecProcura.resolver(problema);
-//        mostrarTrajecto(solucao);
+//        ProcuraProfIter mecProcuraProfIter = new ProcuraProfIter();
+//        System.out.println("Procura em Profundidade Iterativa:");
+//        Solucao solProfIter1 = mecProcuraProfIter.resolver(prob1);
+//        Solucao solProfIter2 = mecProcuraProfIter.resolver(prob2);
+//        mostrarPuzzle(solProfIter1, mecProcuraProfIter.getNnosFronteira(), mecProcuraProfIter.getNnosExpandidos() );
+//        mostrarPuzzle(solProfIter2, mecProcuraProfIter.getNnosFronteira(), mecProcuraProfIter.getNnosExpandidos() );
 //        System.out.println("=========================");
 //
-//        mecProcura = new ProcuraCustoUnif();
-//        System.out.println("ProcuraCustoUnif:");
-//        solucao = mecProcura.resolver(problema);
-//        mostrarTrajecto(solucao);
+//        //Procura custo Uniforme
+//        ProcuraProfIter mecProcuraProfIter = new ProcuraProfIter();
+//        System.out.println("Procura em Profundidade Iterativa:");
+//        Solucao solProfIter1 = mecProcuraProfIter.resolver(prob1);
+//        Solucao solProfIter2 = mecProcuraProfIter.resolver(prob2);
+//        mostrarPuzzle(solProfIter1, mecProcuraProfIter.getNnosFronteira(), mecProcuraProfIter.getNnosExpandidos() );
+//        mostrarPuzzle(solProfIter2, mecProcuraProfIter.getNnosFronteira(), mecProcuraProfIter.getNnosExpandidos() );
 //        System.out.println("=========================");
 
     }
