@@ -19,18 +19,21 @@ public class PlaneadorTrajecto {
         OperadorLigacao[] operadores = definirOperadores();
         ProblemaPlanTraj problema = new ProblemaPlanTraj("0", "4", operadores);
 
+        //Procura em Profundidade
         Procura mecProcura = new ProcuraProf();
         System.out.println("Procura em Profundidade:");
         Solucao solucao = mecProcura.resolver(problema);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
 
+        //Procura em Profundidade Iterativa
         mecProcura = new ProcuraProfIter();
         System.out.println("Procura em Profundidade Iterativa:");
         solucao = mecProcura.resolver(problema, 5);
         mostrarTrajecto(solucao);
         System.out.println("=========================");
 
+        //Procura em Largura
         mecProcura = new ProcuraLarg();
         System.out.println("ProcuraLarg:");
         solucao = mecProcura.resolver(problema);
@@ -43,17 +46,6 @@ public class PlaneadorTrajecto {
         mostrarTrajecto(solucao);
         System.out.println("=========================");
 
-//        ProcuraHeur mecProcuraHeur = new ProcuraSofrega();
-//        System.out.println("ProcuraSofrega:");
-//        solucao = mecProcuraHeur.resolver(problema);
-//        mostrarTrajecto(solucao);
-//        System.out.println("=========================");
-//
-//        mecProcuraHeur = new ProcuraAA();
-//        System.out.println("ProcuraAA:");
-//        solucao = mecProcuraHeur.resolver(problema);
-//        mostrarTrajecto(solucao);
-//        System.out.println("=========================");
     }
 
     private static OperadorLigacao[] definirOperadores(){

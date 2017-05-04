@@ -60,8 +60,8 @@ public abstract class MecanismoProcura<P extends Problema> {
 
     protected abstract MemoriaProcura iniciarMemoria();
 
-    //getn nos expandidos(){return memoriaprocura.getnnosexpl();}
+    public int getNnosExpandidos(){return memoriaProcura.getNmaxnosexplorados();}
 
-    //getn nos fronteira(){return memoriaprocura.getnnosfronteira();}
+    public int getNnosFronteira(){return memoriaProcura.getNmaxnosfronteira();}
 
 }
