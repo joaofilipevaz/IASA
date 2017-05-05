@@ -7,7 +7,7 @@ public class EstadoPuzzle extends Estado {
 
     private Puzzle puzzle;
 
-    public EstadoPuzzle(Puzzle puzzle) {
+    EstadoPuzzle(Puzzle puzzle) {
         this.puzzle = puzzle;
     }
 
@@ -21,7 +21,7 @@ public class EstadoPuzzle extends Estado {
         return puzzle.toString();
     }
 
-    public Puzzle getPuzzle(){
+    Puzzle getPuzzle(){
         return puzzle;
     }
 }
